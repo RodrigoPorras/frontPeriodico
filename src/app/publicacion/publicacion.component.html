@@ -1,3 +1,28 @@
-<p>
-  publicacion works!
-</p>
+<h1>Publicaciones Almacenadas</h1>
+<div class="clear"></div>
+<table class="table" >
+  <thead>
+    <tr>
+      <th scope="col">Id</th>        
+      <th scope="col">Titulo</th>
+      <th scope="col">Contenido</th>
+      <th scope="col">Link Imagen</th>
+      <th scope="col">Fecha Publicacion</th>
+      <th scope="col">Link</th>
+      <th scope="col">Precio</th>
+      <th scope="col">Tipo Publicacion</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of publicaciones">
+      <td>{{item.id}}</td>
+      <td>{{item.titulo}}</td>
+      <td>{{item.contenido}}</td>
+      <td>{{item.linkImagen}}</td>
+      <td>{{item.fechaPublicacion}}</td>
+      <td>{{item.link}}</td>
+      <td>{{item.precio}}</td>
+      <td>{{item.tipoPublicacion}}</td>
+    </tr>
+  </tbody>
+</table>

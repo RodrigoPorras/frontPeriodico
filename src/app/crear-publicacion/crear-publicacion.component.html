@@ -1,0 +1,52 @@
+<div class="clear"></div>
+<h1>Crear Nueva Publicacion</h1>
+
+
+<form class="main-form" action="/action_page.php">
+  <div *ngIf="!isValid" class="alert alert-danger" role="alert">
+      {{message}}
+  </div>
+  <div class="form-group">
+    <label class="control-label col-sm-2" for="titulo"><span class="required">*</span>Titulo:</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" name="titulo" id="titulo" [(ngModel)]="publicacion.titulo" placeholder="Ingrese el titulo de la publicacion">
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="control-label col-sm-2" for="contenido"><span class="required">*</span>Contenido:</label>
+    <div class="col-sm-10"> 
+      <input type="text" class="form-control" name="contenido" id="contenido" [(ngModel)]="publicacion.contenido" placeholder="Ingrese el contenido en texto de la publicacion">
+    </div>
+  </div>
+  <div class="form-group">
+      <label class="control-label col-sm-2" for="linkImagen">Link Imagen:</label>
+      <div class="col-sm-10"> 
+        <input type="text" class="form-control" name="linkImagen" id="linkImagen" [(ngModel)]="publicacion.linkImagen" placeholder="Ingrese el link de la imagen si existe">
+      </div>
+  </div>
+  <div class="form-group">
+      <label class="control-label col-sm-2" for="Link">Link:</label>
+      <div class="col-sm-10"> 
+        <input type="text" class="form-control" name="Link" id="Link"  [(ngModel)]="publicacion.link" placeholder="Ingrese el link si existe mas informacion">
+      </div>
+  </div>
+  <div class="form-group">
+      <label class="control-label col-sm-2" for="precio">Precio:</label>
+      <div class="col-sm-10"> 
+        <input type="text" class="form-control" name="precio" id="precio"  [(ngModel)]="publicacion.precio" placeholder="Ingrese el precio si este existe">
+      </div>
+  </div>
+  <div class="form-group">
+      <label class="control-label col-sm-2" for="tipoPublicacion"><span class="required">*</span>Tipo De Publicacion:</label>
+      <div class="col-sm-10"> 
+        <input type="text" class="form-control" name="tipoPublicacion" id="tipoPublicacion"  [(ngModel)]="publicacion.tipoPublicacion" placeholder="Ingrese el tipo de publicacion, 1 para noticia, 2 para evento  o 3 para publicidad ">
+      </div>
+  </div>
+
+  <div class="form-group"> 
+    <div class="col-sm-offset-2 col-sm-10">
+      <button type="submit" (click)  ="saveOrUpdate()" class="btn btn-default btn-save">Crear</button>
+    </div>
+  </div>
+
+</form>
