@@ -20,7 +20,12 @@ export class CrearPublicacionComponent implements OnInit {
 
   constructor(private crearPublicacionService : CrearPublicacionService, 
     private router:Router) { 
-    this.publicacion = new publicacionModel();
+      if(sessionStorage.getItem("publicacion")){
+        this.publicacion = JSON.parse(sessionStorage.getItem("publicacion"));
+      }else{
+        this.publicacion = new publicacionModel();
+      }
+    
   }
 
   ngOnInit() {
@@ -40,5 +45,6 @@ export class CrearPublicacionComponent implements OnInit {
     }else{
       this.message = "Los campos con * son obligatorios";
     }
+    sessionStorage.clear();
   }
 }

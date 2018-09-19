@@ -11,6 +11,7 @@
       <th scope="col">Link</th>
       <th scope="col">Precio</th>
       <th scope="col">Tipo Publicacion</th>
+      <th scope="col">Accion </th>
     </tr>
   </thead>
   <tbody>
@@ -23,6 +24,8 @@
       <td>{{item.link}}</td>
       <td>{{item.precio}}</td>
       <td>{{item.tipoPublicacion}}</td>
+      <td> <img src="../../assets/edit.png" class="editIcon" (click) = "edit(item)"></td>
+      <td> <img src="../../assets/delete.png" class="editIcon" (click) = "delete(item)"></td>
     </tr>
   </tbody>
 </table>
